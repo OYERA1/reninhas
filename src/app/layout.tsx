@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "@/styles/global.css";
 
+export interface ClassTypes {
+  className?: string;
+}
+
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["500", "400", "700"],

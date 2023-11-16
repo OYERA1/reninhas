@@ -1,17 +1,23 @@
+"use client";
+
 import Image from "next/image";
 import cineminha from "../../../public/cineminha.jpg";
 import VAMPIRO from "../../../public/VAMPIROS.jpg";
 import elevador from "../../../public/elevador.jpg";
 import escovas from "../../../public/escovas.jpg";
 import primeiro from "../../../public/primeiravez.jpg";
+import { ButtonRenas } from "@/components/buttons/page";
+import FooterRenas from "@/components/footer/page";
 
 export default function Fotinhas() {
   const imageClass = "flex flex-col text-center items-center ";
 
   return (
-    <main className="flex flex-col items-center bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blues-900 via-blues-950 to-black h-full ">
-      <div className=" text-center mb-10 max-w-lg pt-10">
-        <h1 className="text-4xl font-bold text-blues-100 ">Galeria</h1>
+    <main className="flex flex-col items-center bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blues-700 via-blues-950 to-black h-max bg-no-repea ">
+      <div className=" text-center mb-10 max-w-lg mt-10">
+        <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-l from-pinks-600 to-pinks-950">
+          Galeria
+        </h1>
         <span className="text-sm text-blues-100">
           Nossas fotinhas de alguns dias especiais onde fui percebendo o quão eu
           gosto de você, e onde esse sentimento foi crescendo
@@ -99,7 +105,7 @@ export default function Fotinhas() {
           </div>
         </div>
       </div>
-      <div className="mt-24 mb-20 flex flex-col items-center max-w-lg text-center">
+      <div className="mt-24 mb-10 flex flex-col items-center max-w-lg text-center">
         <span className="text-blues-100">11/08</span>
         <Image
           src={primeiro}
@@ -117,10 +123,8 @@ export default function Fotinhas() {
           as 4 da manhã do dia seguinte conversando sem parar.
         </span>
       </div>
-
-      <footer className="mb-2 text-blues-100">
-        Feito com ❤️ pelo seu namorado favorito!
-      </footer>
+      <ButtonRenas />
+      <FooterRenas className="text-purple-400" />
     </main>
   );
 }

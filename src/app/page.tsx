@@ -1,13 +1,14 @@
+"use client";
+
 import Image from "next/image";
 import love from "../../public/renasSite.png";
 import Link from "next/link";
+import FooterRenas from "@/components/footer/page";
+import { ButtonMainPage } from "@/components/buttons/page";
 
 export default function Home() {
-  const divButton = "flex flex-col border-2 border-blues-500 rounded-t-xl p-4";
-  const button = "bg-blues-500 rounded-b w-full h-16 text-white-100";
-
   return (
-    <main className="flex flex-col h-screen w-screen bg-reds-950 items-center ">
+    <main className="flex flex-col  h-screen bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-reds-900 via-reds-950 to-black items-center">
       <div className="mt-8 ml-4">
         <Link href="https://instagram.com/renaspotato" target="_blank">
           <Image
@@ -22,26 +23,36 @@ export default function Home() {
         Ainda vou te fazer perder a aposta, princesa!
       </span>
 
-      <div className="flex gap-16 mt-8">
-        <Link href="/fotinhas">
-          <div className={divButton}>
-            <span className="text-sm">Nossas fotos mais lindas</span>
-          </div>
-          <button className={button}>Fotinhas</button>
-        </Link>
-        <Link href="/fotinhas">
-          <div className={divButton}>
-            <span className="text-sm">Nossas fotos mais lindas</span>
-          </div>
-          <button className={button}>Fotinhas</button>
-        </Link>
-        <Link href="/fotinhas">
-          <div className={divButton}>
-            <span className="text-sm">Nossas fotos mais lindas</span>
-          </div>
-          <button className={button}>Fotinhas</button>
-        </Link>
+      <div className="flex gap-16 mt-8 mb-10">
+        <ButtonMainPage
+          links="/fotinhas"
+          title="Fotinhas"
+          label="As fotos mais lindas"
+          color1="from-blues-500"
+          color2="to-blues-900"
+          borderColor="border-blues-500"
+        />
+        <ButtonMainPage
+          links="/playlist"
+          title="Playlists"
+          label="Nossas músicas"
+          color1="from-green-800"
+          color2="to-greens-950"
+          borderColor="border-green-900"
+        />
       </div>
+
+      <div>
+        <ButtonMainPage
+          links="/amor"
+          title="Amor?"
+          label="Será que você realmente não me ama?"
+          color1="from-pinks-700"
+          color2="to-reds-950"
+          borderColor="border-pinks-900"
+        />
+      </div>
+      <FooterRenas />
     </main>
   );
 }
