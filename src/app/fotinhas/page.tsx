@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import cineminha from "../../../public/cineminha.jpg";
 import VAMPIRO from "../../../public/VAMPIROS.jpg";
 import elevador from "../../../public/elevador.jpg";
@@ -52,7 +51,7 @@ export default function Fotinhas() {
       </div>
       <div className="flex flex-col mt-10 p-2 sm:flex-row sm:gap-24">
         <PhotoRenasFirst
-          teste={window.innerWidth <= 640}
+          teste={typeof window !== "undefined" && window.innerWidth <= 640}
           modifyDiv="gap-3 sm:gap-0 sm:rotate-45"
           alt="Nois escovando os dentes"
           title="Nois escovando os dentes"
@@ -65,7 +64,7 @@ export default function Fotinhas() {
           photos={escovas}
         />
         <PhotoRenasFirst
-          teste={window.innerWidth <= 640}
+          teste={typeof window !== "undefined" && window.innerWidth <= 640}
           modifyDiv="gap-3 mt-10 sm:-rotate-12 sm:gap-0 sm:mr-16"
           alt="Nois escovando os dentes"
           title="Nois escovando os dentes"
@@ -93,7 +92,9 @@ export default function Fotinhas() {
           acontecer daqui pra frente, é olharmos um pro outro e darmos graças a
           Deus que estavamos lá, que nosso beijo encaixou e de como ficamos até
           as 4 da manhã do dia seguinte conversando sem parar.'
-        width={window.innerWidth <= 650 ? 300 : 400}
+        width={
+          typeof window !== "undefined" && window.innerWidth <= 650 ? 300 : 400
+        }
         photos={primeiro}
       />
       <ButtonRenas />
