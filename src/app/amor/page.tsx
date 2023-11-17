@@ -11,7 +11,7 @@ import { useDisclosure } from "@chakra-ui/react";
 export default function Amor() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <main className="flex flex-col justify-center items-center bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-pinks-500 via-pinks-950 to-black h-screen ">
+    <main className="flex flex-col justify-center pb-10 items-center bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-pinks-500 via-pinks-950 to-black h-screen ">
       <span className=" font-bold text-center text-[90px] mt-[250px] text-honey-600">
         AFINAL PRINCESA, VOCÊ ME AMA?
       </span>
