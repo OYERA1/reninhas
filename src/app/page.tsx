@@ -8,7 +8,13 @@ import { ButtonMainPage } from "@/components/buttons/page";
 
 export default function Home() {
   return (
-    <main className="flex flex-col  h-screen bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-reds-900 via-reds-950 to-black items-center">
+    <main
+      className="flex flex-col h-full sm:h-screen
+     bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))]
+    from-reds-900 via-reds-950 to-black items-center
+    
+    "
+    >
       <div className="mt-8 ml-4">
         <Link href="https://instagram.com/renaspotato" target="_blank">
           <Image
@@ -23,7 +29,7 @@ export default function Home() {
         Ainda vou te fazer perder a aposta, princesa!
       </span>
 
-      <div className="flex gap-16 mt-8 mb-10">
+      <div className="flex flex-col gap-16 mt-8 mb-16 sm:flex sm:flex-row m-0 sm:mb-10">
         <ButtonMainPage
           links="/fotinhas"
           title="Fotinhas"
@@ -52,7 +58,7 @@ export default function Home() {
           borderColor="border-pinks-900"
         />
       </div>
-      <FooterRenas />
+      <FooterRenas className="mt-14" />
     </main>
   );
 }
