@@ -5,11 +5,32 @@ import VAMPIRO from "../../../public/VAMPIROS.jpg";
 import elevador from "../../../public/elevador.jpg";
 import escovas from "../../../public/escovas.jpg";
 import primeiro from "../../../public/primeiravez.jpg";
+import FooterRenas from "@/components/footer/page";
+import { useEffect, useState } from "react";
 import { ButtonRenas } from "@/components/buttons/page";
 import { PhotoRenasFirst } from "@/components/photos/page";
-import FooterRenas from "@/components/footer/page";
 
 export default function Fotinhas() {
+  const [windowWidth, setWindowWidth] = useState<number | null>(null);
+
+  // Efeito que atualiza a largura da janela ao montar o componente
+  useEffect(() => {
+    const updateWindowWidth = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    // Atualiza a largura da janela inicialmente
+    updateWindowWidth();
+
+    // Adiciona um ouvinte de redimensionamento da janela
+    window.addEventListener("resize", updateWindowWidth);
+
+    // Remove o ouvinte de redimensionamento ao desmontar o componente
+    return () => {
+      window.removeEventListener("resize", updateWindowWidth);
+    };
+  }, []);
+
   const gradientClass =
     "bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))]";
 
@@ -51,7 +72,7 @@ export default function Fotinhas() {
       </div>
       <div className="flex flex-col mt-10 p-2 sm:flex-row sm:gap-24">
         <PhotoRenasFirst
-          teste={typeof window !== "undefined" && window.innerWidth <= 640}
+          teste={windowWidth && windowWidth <= 640 ? true : false}
           modifyDiv="gap-3 sm:gap-0 sm:rotate-45"
           alt="Nois escovando os dentes"
           title="Nois escovando os dentes"
@@ -64,7 +85,7 @@ export default function Fotinhas() {
           photos={escovas}
         />
         <PhotoRenasFirst
-          teste={typeof window !== "undefined" && window.innerWidth <= 640}
+          teste={windowWidth && windowWidth <= 640 ? true : false}
           modifyDiv="gap-3 mt-10 sm:-rotate-12 sm:gap-0 sm:mr-16"
           alt="Nois escovando os dentes"
           title="Nois escovando os dentes"
