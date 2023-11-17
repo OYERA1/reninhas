@@ -66,7 +66,7 @@ export default function SpotifyRenas() {
           <span className="text-center flex flex-col mb-2 mt-2 text-musics-superbass">
             "Excuse me, you're a hell of a girl you know, I really got a thing
             for Quitauna girls I mean, sigh, sickenin' eyes I can tell that
-            you're in touch with your cachaceira side, uh"
+            you're in touch with your osasquense side, uh"
           </span>
         </div>
       </div>
