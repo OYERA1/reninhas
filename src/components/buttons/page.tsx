@@ -18,10 +18,8 @@ interface RandomButton {
 
 export function ButtonRenas({ className }: ClassTypes) {
   return (
-    <Link href={"/"}>
-      <button
-        className={`bg-reds-950 text-whites-200 rounded-md w-20 h-9 mb-6 ${className}`}
-      >
+    <Link href={"/"} className={`${className}`}>
+      <button className={`bg-reds-950 text-whites-200 rounded-md w-20 h-9 `}>
         Voltar
       </button>
     </Link>
@@ -59,8 +57,8 @@ export function RandomButton({ children }: RandomButton) {
   const buttonWidth = 24;
 
   const handleClick = () => {
-    const maxWidth = window.innerWidth - buttonWidth;
-    const maxHeight = window.innerHeight - buttonHeight;
+    const maxWidth = window.innerWidth - (buttonWidth + 75);
+    const maxHeight = window.innerHeight - (buttonHeight + 75);
     console.log(maxWidth, maxHeight, window.innerWidth, window.innerHeight);
 
     const x = Math.floor(Math.random() * (maxWidth + 1)) + "px";
@@ -70,7 +68,7 @@ export function RandomButton({ children }: RandomButton) {
 
   return (
     <button
-      className={` text-whites-100 bg-gradient-to-tr from-greens-900 to-greens-600  hover:from-reds-950 hover:to-reds-600 focus:outline-none rounded-sm w-24 h-10  text-center`}
+      className={` text-whites-100 bg-gradient-to-tr from-greens-900 to-greens-600  sm:hover:from-reds-950 sm:hover:to-reds-600 focus:outline-none rounded-sm w-24 h-10  text-center`}
       style={{ ...position }}
       onClick={handleClick}
     >

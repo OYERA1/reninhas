@@ -30,10 +30,10 @@ const theme = extendTheme({
   Modal: {
     baseStyle: (props: Props) => ({
       dialog: {
-        maxWidth: ["40%", "40%", "40%"],
-        minWidth: "40%",
-        maxHeight: ["50%", "50%", "50%"],
-        minHeight: "45%",
+        maxWidth: ["30%", "30%", "30%"],
+        minWidth: "100%",
+        maxHeight: ["100%"],
+        minHeight: "100%",
         bg: "white",
         text: "black",
       },
@@ -46,8 +46,8 @@ export default function FinishedModal({ isOpen, onOpen, onClose }: ModalType) {
     <ChakraProvider theme={theme}>
       <Modal isCentered isOpen={isOpen} onClose={onClose}>
         <ModalOverlay
-          bg="blackAlpha.300"
-          backdropFilter="blur(10px) hue-rotate(90deg)"
+          bg="blackAlpha.700"
+          backdropFilter="blur(10px) hue-rotate(4deg)"
         />
         <ModalContent>
           <ModalHeader color={"red"}>VOCÊ PERDEU PARCEIRA</ModalHeader>

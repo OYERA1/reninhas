@@ -13,19 +13,15 @@ import { PhotoRenasFirst } from "@/components/photos/page";
 export default function Fotinhas() {
   const [windowWidth, setWindowWidth] = useState<number | null>(null);
 
-  // Efeito que atualiza a largura da janela ao montar o componente
   useEffect(() => {
     const updateWindowWidth = () => {
       setWindowWidth(window.innerWidth);
     };
 
-    // Atualiza a largura da janela inicialmente
     updateWindowWidth();
 
-    // Adiciona um ouvinte de redimensionamento da janela
     window.addEventListener("resize", updateWindowWidth);
 
-    // Remove o ouvinte de redimensionamento ao desmontar o componente
     return () => {
       window.removeEventListener("resize", updateWindowWidth);
     };
@@ -118,7 +114,7 @@ export default function Fotinhas() {
         }
         photos={primeiro}
       />
-      <ButtonRenas />
+      <ButtonRenas className="mb-6" />
       <FooterRenas className="text-purple-400" />
     </main>
   );

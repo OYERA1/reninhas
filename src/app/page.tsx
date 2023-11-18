@@ -9,10 +9,10 @@ import { ButtonMainPage } from "@/components/buttons/page";
 export default function Home() {
   return (
     <main
-      className="flex flex-col h-full sm:h-screen
+      className="flex flex-col h-full items-center px-2 sm:p-0  sm:h-screen
      bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))]
-    from-reds-900 via-reds-950 to-black items-center
-    
+    from-reds-900 via-reds-950 to-black
+min-[540px]:h-screen    
     "
     >
       <div className="mt-8 ml-4">
@@ -25,11 +25,11 @@ export default function Home() {
           />
         </Link>
       </div>
-      <span className="mt-16 ">
+      <span className=" flex flex-wrap text-center text-sm mt-16 sm:text-base">
         Ainda vou te fazer perder a aposta, princesa!
       </span>
 
-      <div className="flex flex-col gap-16 mt-8 mb-16 sm:flex sm:flex-row m-0 sm:mb-10">
+      <div className="flex flex-col items-center gap-16 mt-8 mb-16 sm:flex sm:flex-row m-0 sm:mb-10">
         <ButtonMainPage
           links="/fotinhas"
           title="Fotinhas"
@@ -58,7 +58,7 @@ export default function Home() {
           borderColor="border-pinks-900"
         />
       </div>
-      <FooterRenas className="mt-14" />
+      <FooterRenas className="sm:mt-auto mt-10 pb-4" />
     </main>
   );
 }
